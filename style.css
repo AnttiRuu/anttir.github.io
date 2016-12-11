@@ -30,11 +30,16 @@ font-size: 35px;
 }
 .table2
 {
-	width: 100%;
+	border: 1px solid black;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
 }
-.td2 {
+.td2, .tr2 {
+	border: 1px solid black;
 	width: 500px;
 	height: 300px;
+	padding: 0px;
 }
 th, td {
 
