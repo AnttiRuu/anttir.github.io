@@ -25,8 +25,8 @@ function TestCanvas()
 }
 function DrawImages()
 {
-	var imageCount = 1
-	for (var i = imageCount; i > 0; i--) {
+	var imageCount = 5
+	for (var i = 1; i < imageCount + 1; i++) {
 		var cn = "Canvas" + i
 		DrawCanvas(cn, 500, 500)
 	}
@@ -53,8 +53,8 @@ function DrawCanvas(canvasNumber, customWidth, customHeight)
 			}
 					
 		var context = canvas.getContext("2d")
-		var img = document.getElementById("testimg")
-		context.drawImage(testimg,0,0,canvas.width,canvas.height)
+		var img = document.getElementById(canvasNumber + "img")
+		context.drawImage(img,0,0,canvas.width,canvas.height)
 }
 
 </script>
@@ -63,10 +63,28 @@ function DrawCanvas(canvasNumber, customWidth, customHeight)
 <body onload="StartScripts()">
 
 <h1>Images</h1>
-<div class="center">
+
+<div>
 <center><canvas id="Canvas1" width="1px" height="1px" onCLick="DrawCanvas('Canvas1', 500, 500)">
-<img src="C:\Users\never\Desktop\homepage\testimg.png" id="testimg">
+<img src="C:\Users\never\Desktop\homepage\testimg.png" id="Canvas1img">
 </canvas>
+
+<center><canvas id="Canvas2" width="1px" height="1px" onCLick="DrawCanvas('Canvas2', 500, 500)">
+<img src="C:\Users\never\Desktop\homepage\img2.jpg" id="Canvas2img">
+</canvas>
+
+<center><canvas id="Canvas3" width="1px" height="1px" onCLick="DrawCanvas('Canvas3', 500, 500)">
+<img src="C:\Users\never\Desktop\homepage\img3.jpg" id="Canvas3img">
+</canvas>
+
+<center><canvas id="Canvas4" width="1px" height="1px" onCLick="DrawCanvas('Canvas4', 500, 500)">
+<img src="C:\Users\never\Desktop\homepage\img4.png" id="Canvas4img">
+</canvas>
+
+<center><canvas id="Canvas5" width="1px" height="1px" onCLick="DrawCanvas('Canvas5', 500, 500)">
+<img src="C:\Users\never\Desktop\homepage\img5.gif"" id="Canvas5img">
+</canvas>
+
 </div>
 <p class="center">
 test</p>
