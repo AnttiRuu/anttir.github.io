@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" type="text/css" media="screen" href="style.css">
+<script>
+function drop(event)
+{
+event.preventDefault();
+var data=event.dataTransfer.getData("Text");
+event.target.appendChild(document.getElementById(data));
+}
+function permitdrop(event)
+{
+event.preventDefault();
+}
+function drag(event)
+{
+event.dataTransfer.setData("Text", event.target.id);
+}
+
+</script>
+<body>
+<!-- Main Menu -->
+<div class="menu">
+<h1>
+<ul><center>
+<li><a href="./images.html">Gallery</a></li>
+<li><a href="./videos.html">Videos</a></li>
+<li><a href="./about.html">About</a></li>
+<li><a href="./other.html">Other</a></li>
+<li><a href="./email.html">Contact</a></li></center>
+</ul>
+</div>
+<div>
+<!-- done -->
+<table class="table2">
+<tr>
+<td>
+<img src="images/x.png" draggable="true" id="cross" width="400" height="300"
+ondragstart="drag(event)"/>
+<div ondragover="permitdrop(event)" ondrop="drop(event)" style="background-color: transparent;
+width:300px; height:300px"></div>
+</td>
+<td>
+<div ondragover="permitdrop(event)" ondrop="drop(event)" style="background-color: transparent;
+width:300px; height:300px"></div>
+</td>
+<td>
+<div ondragover="permitdrop(event)" ondrop="drop(event)" style="background-color: transparent;
+width:300px; height:300px"></div>
+</td>
+</tr>
+<tr>
+<td>
+
+<div ondragover="permitdrop(event)" ondrop="drop(event)" style="background-color: transparent;
+width:300px; height:300px"></div>
+</td>
+<td>
+<div ondragover="permitdrop(event)" ondrop="drop(event)" style="background-color: transparent;
+width:300px; height:300px"></div>
+</td>
+<td>
+<div ondragover="permitdrop(event)" ondrop="drop(event)" style="background-color: transparent;
+width:300px; height:300px"></div>
+</td>
+</tr>
+<tr>
+<td>
+
+<div ondragover="permitdrop(event)" ondrop="drop(event)" style="background-color: transparent;
+width:300px; height:300px"></div>
+</td>
+<td>
+<div ondragover="permitdrop(event)" ondrop="drop(event)" style="background-color: transparent;
+width:300px; height:300px"></div>
+</td>
+<td>
+<div ondragover="permitdrop(event)" ondrop="drop(event)" style="background-color: transparent;
+width:300px; height:300px"></div>
+</td>
+</tr>
+<br>
+
+
+</body>
+</html>

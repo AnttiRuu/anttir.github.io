@@ -6,8 +6,8 @@
 <meta charset="utf-8">
 <script>
 	var imageCount = 5
-	var normalHeight = 500
-	var normalWidth = 500
+	var normalHeight = window.innerHeight / 4
+	var normalWidth = Math.round(window.innerWidth / 8)
 function StartScripts()
 {
 
@@ -36,7 +36,6 @@ function DrawImages()
 }
 function DrawCanvas(canvasNumber, customWidth, customHeight)
 {
-
 			var fullScreen = 0
 
 			if (typeof customWidth == "undefined") { iwidth = normalHeight }
@@ -46,8 +45,8 @@ function DrawCanvas(canvasNumber, customWidth, customHeight)
 			if (canvas.width == normalWidth ) { fullScreen = true } else { fullScreen = false }
 			if (fullScreen == true)
 			{
-				canvas.width = window.innerWidth*0.9
-				canvas.height = window.innerHeight*0.77
+				canvas.width = window.innerWidth*0.8
+				canvas.height = window.innerHeight*0.70
 				ZoomImage(canvasNumber)
 			}
 			else {
@@ -87,11 +86,24 @@ function ResetImages()
 <title>Images</title>
 </head>
 <body onload="StartScripts()">
+<!-- Main Menu -->
+<div class="menu">
+<h1>
+<ul><center>
+<li><a href="./images.html">Gallery</a></li>
+<li><a href="./videos.html">Videos</a></li>
+<li><a href="./about.html">About</a></li>
+<li><a href="./other.html">Other</a></li>
+<li><a href="./email.html">Contact</a></li></center>
+</ul>
+</div>
+<div>
+<!-- done -->
 
 <h1>Images</h1>
 
 <div>
-<table>
+<table class="table1">
 
 <td>
 <tr>
