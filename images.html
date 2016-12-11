@@ -5,6 +5,9 @@
 <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 <meta charset="utf-8">
 <script>
+	var imageCount = 5
+	var normalHeight = 500
+	var normalWidth = 500
 function StartScripts()
 {
 
@@ -25,7 +28,7 @@ function TestCanvas()
 }
 function DrawImages()
 {
-	var imageCount = 5
+
 	for (var i = 1; i < imageCount + 1; i++) {
 		var cn = "Canvas" + i
 		DrawCanvas(cn, 500, 500)
@@ -33,8 +36,7 @@ function DrawImages()
 }
 function DrawCanvas(canvasNumber, customWidth, customHeight)
 {
-			var normalHeight = 500
-			var normalWidth = 500
+
 			var fullScreen = 0
 
 			if (typeof customWidth == "undefined") { iwidth = normalHeight }
@@ -44,19 +46,43 @@ function DrawCanvas(canvasNumber, customWidth, customHeight)
 			if (canvas.width == normalWidth ) { fullScreen = true } else { fullScreen = false }
 			if (fullScreen == true)
 			{
-				canvas.width = window.innerWidth*0.98
-				canvas.height = window.innerHeight*0.9
+				canvas.width = window.innerWidth*0.9
+				canvas.height = window.innerHeight*0.77
+				ZoomImage(canvasNumber)
 			}
 			else {
-				canvas.width = normalWidth
-				canvas.height = normalHeight
+				ResetImages()
 			}
 					
 		var context = canvas.getContext("2d")
 		var img = document.getElementById(canvasNumber + "img")
 		context.drawImage(img,0,0,canvas.width,canvas.height)
 }
+function ZoomImage(zoomNumber)
+{
+	for (var i = 1; i < imageCount + 1; i++)
+	{
+		var cn = "Canvas" + i
+		if ("Canvas" + i != zoomNumber) 
+		{
+			document.getElementById(cn).width = 0
+			document.getElementById(cn).height = 0
+		}
+	}
+}
+function ResetImages()
+{
+	for (var i = 1; i < imageCount + 1; i++)
+	{
+		var canvas = document.getElementById("Canvas" + i)
+		canvas.width = normalWidth
+		canvas.height = normalHeight
 
+		var context = canvas.getContext("2d")
+		var img = document.getElementById("Canvas" + i + "img")
+		context.drawImage(img,0,0,canvas.width,canvas.height)
+	}
+}
 </script>
 <title>Images</title>
 </head>
@@ -71,39 +97,34 @@ function DrawCanvas(canvasNumber, customWidth, customHeight)
 <tr>
 <td>
 <center><canvas id="Canvas1" width="1px" height="1px" onCLick="DrawCanvas('Canvas1', 500, 500)">
-<img src="\testimg.png" id="Canvas1img">
+<img src="images/testimg.png" id="Canvas1img">
 </canvas></center></td>
 <td>
-blaa
-</td>
-</tr>
-
-<td>
 <center><canvas id="Canvas2" width="1px" height="1px" onCLick="DrawCanvas('Canvas2', 500, 500)">
-<img src="\img2.jpg" id="Canvas2img">
+<img src="images/img2.jpg" id="Canvas2img">
 </canvas></center>
 </td>
 
 <td>
 <center><canvas id="Canvas3" width="1px" height="1px" onCLick="DrawCanvas('Canvas3', 500, 500)">
-<img src="\img3.jpg" id="Canvas3img">
+<img src="images/img3.jpg" id="Canvas3img">
 </canvas></center>
 </td>
 
 <td>
 <center><canvas id="Canvas4" width="1px" height="1px" onCLick="DrawCanvas('Canvas4', 500, 500)">
-<img src="\img4.png" id="Canvas4img">
+<img src="images/img4.png" id="Canvas4img">
 </canvas></center>
 </td>
 
+</tr>
+<tr>
 <td>
 <center><canvas id="Canvas5" width="1px" height="1px" onCLick="DrawCanvas('Canvas5', 500, 500)">
-<img src="\img5.gif"" id="Canvas5img">
+<img src="images/img5.gif"" id="Canvas5img">
 </canvas></center>
 </td>
 
 </div>
-<p class="center">
-test</p>
 </body>
 </html>
